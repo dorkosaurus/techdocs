@@ -14,3 +14,8 @@ grep vivekr /etc/passwd
 whatis cat
 ````
 
+## Setting environment variables for an executing command
+````
+PGUSER=gmod PGPASSWORD=gmod ./export_chado_cv_module_as_csv.sh
+````
+
