@@ -65,5 +65,20 @@ git add README
 
 If you simply follow step 1 and don't execute step 3 git will only commit step 1 when you tell it to commit
 
+##Checkout from svn
 
+````
+git svn clone -stdlayout --no-minimize-url -r 148536:HEAD http://resscm/bioinfo/projects/protein-sciences-core/bmr/
+````
+
+## Connect to other remote repository
+````
+$git remote add sueno ../sueno/
+$git fetch sueno
+$git remote -v
+````
+## Cherry pick from repository I'm connected to
+````
+git cherry-pick 151cf1d6ae7fb477387eef0cabbd50ef4f6710e3
+````
 
