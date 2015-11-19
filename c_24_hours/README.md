@@ -24,7 +24,7 @@ Now, let's see what you cannot use in variable naming:
 * A variable name cannot contain any dots (.).
 * A variable name cannot contain any apostrophes.
 
-A variable name cannot contain any other special symbols such as *, @, #, ?, and so on.
+A variable name cannot contain any other special symbols such as \*, @, #, ?, and so on.
 Some invalid variable names, for example, are, 4flags, sum-result, method*4, and what_size?.
 
 
