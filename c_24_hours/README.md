@@ -4,6 +4,14 @@ http://aelinik.free.fr/c/
 
 # Useful text
 
+## Data types
+
+Type   | Storage size      | value range
+char   | 1 byte (8 bits)   | -128 to 127  
+int    | 4 bytes (32 bits) | -2147483648 to 2147483647
+float  | 4 bytes (32 bits) | -3.4E+38 to +3.4E+38
+double | 8 bytes (64 bits) | -1.7E+308 to +1.7E+308  
+
 ## Variable naming
 
 Naming a Variable
