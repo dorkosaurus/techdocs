@@ -1,0 +1,60 @@
+Vagrant.configure('2') do |config|
+
+  box='digital_ocean'
+  box_url="https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
+  ssh_key_path='~/.ssh/id_rsa'
+  image='ubuntu-14-04-x64'
+  region='sfo1'
+  size='512mb'
+
+  # this should be a file with only one line - your access token
+  file = File.open("./access_token", "rb")
+  token = file.read
+
+  config.vm.define "master" do |master|
+
+	  master.vm.hostname = 'master.dev'
+	  # Alternatively, use provider.name below to set the Droplet name. config.vm.hostname takes precedence.
+
+	  master.vm.provider :digital_ocean do |provider, override|
+	    override.ssh.private_key_path = ssh_key_path
+	    override.vm.box = box
+	    override.vm.box_url = box_url
+	    provider.token = token
+	    provider.image = image
+	    provider.region = region
+	    provider.size = size
+	  end
+  end
+  config.vm.define "kitty" do |kitty|
+
+	  kitty.vm.hostname = 'kitty.dev'
+	  # Alternatively, use provider.name below to set the Droplet name. config.vm.hostname takes precedence.
+
+	  kitty.vm.provider :digital_ocean do |provider, override|
+	    override.ssh.private_key_path = ssh_key_path
+	    override.vm.box = box
+	    override.vm.box_url = box_url
+	    provider.token = token
+	    provider.image = image
+	    provider.region = region
+	    provider.size = size
+	  end
+  end
+
+  config.vm.define "puppy" do |puppy|
+
+	  puppy.vm.hostname = 'puppy.dev'
+	  # Alternatively, use provider.name below to set the Droplet name. config.vm.hostname takes precedence.
+
+	  puppy.vm.provider :digital_ocean do |provider, override|
+	    override.ssh.private_key_path = ssh_key_path
+	    override.vm.box = box
+	    override.vm.box_url = box_url
+	    provider.token = token
+	    provider.image = image
+	    provider.region = region
+	    provider.size = size
+	  end
+  end
+end
