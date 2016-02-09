@@ -225,4 +225,64 @@ let http200Status = (statusCode:200,description:"OK")
 print("response: \(http200Status.statusCode) ", 
       "\(http200Status.description)")
 
+/** OPTIONALS **/
+
+//converting a string to int returns optional
+//because string may not be a number representation
+var str="abcd"
+var int=Int(str)
+print("trying to convert \(str) into an integer. Result:\(int)")
+
+//you can assign an optional a nil value
+var serverResponseCode : Int? = 404
+serverResponseCode=nil 
+
+//you cannot assign a nonoptional var/constant a nill value
+var requiredServerResponseCode=404
+//requiredServerResponseCode=nil  /*produces a compile error */
+
+//optional without assignment is set to nil.
+//nil means no value (as opposed to a pointer to a null object)
+var surveyAnswer : String?
+print("survey answer: \(surveyAnswer)")
+
+var convertedNumber : Int? = 4
+if convertedNumber != nil {
+	print("converted  number: \(convertedNumber!)")
+}
+//this code will trigger a runtime error because it is trying to unwrap a nil 
+/*
+var dorko : Int?
+print("\(dorko!)");
+*/
+
+/* OPTIONAL BINDING */
+var dorko2: Int? = 4
+if let dorko3 = dorko2{
+	print("dorko3=\(dorko3)")
+}
+
+var dorko4: Int? = 5
+var dorko5:  Int? = 4
+if let actualDorko4 = dorko4, actualDorko5 = dorko5 where actualDorko4 > 
+actualDorko5{
+	print("\(actualDorko4) > \(actualDorko5)")
+}
+
+/*Implictitly Unwrapped optionals */
+let possibleString:String? = "An optional string"
+let forcedString:String = possibleString!
+let assumedString:String! = "An implicitly unwrapped string"
+let implicitString = assumedString
+
+/** ERROR HANDLING **/
+
+func canThrowAnError() throws{
+}
+do{
+	 try canThrowAnError()
+	 //if no error thrown
+}catch{
+	//do something
+}	
 
